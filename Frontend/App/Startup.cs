@@ -1,10 +1,20 @@
-﻿namespace Frontend;
+﻿using Microsoft.Extensions.FileProviders;
+
+namespace Frontend.App;
 
 public class Startup
 {
     public void ConfigureServices(IServiceCollection services)
     {
-        services.AddControllersWithViews();
+        services
+            .AddControllersWithViews()
+                .AddRazorOptions(options =>
+                {
+                    options.ViewLocationFormats.Clear();
+
+                    options.ViewLocationFormats.Add("/Pages/{1}/Ui/{0}.cshtml");
+                    options.ViewLocationFormats.Add("/Pages/Shared/{0}.cshtml");
+                });
     }
 
     public void Configure(IApplicationBuilder app, IHostEnvironment env)

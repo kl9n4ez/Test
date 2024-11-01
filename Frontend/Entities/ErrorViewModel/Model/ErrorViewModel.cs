@@ -1,4 +1,4 @@
-namespace Frontend.Models;
+namespace Frontend.Entities.ErrorViewModel.Model;
 
 public class ErrorViewModel
 {

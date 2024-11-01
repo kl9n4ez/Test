@@ -1,8 +1,8 @@
-using Frontend.Models;
+using Frontend.Entities.ErrorViewModel.Model;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
-namespace Frontend.Controllers;
+namespace Frontend.Pages.Home.Model;
 public class HomeController : Controller
 {
     private readonly ILogger<HomeController> _logger;

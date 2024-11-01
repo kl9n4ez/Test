@@ -9,7 +9,24 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="App\Lib\**" />
+    <Content Remove="App\Lib\**" />
+    <EmbeddedResource Remove="App\Lib\**" />
+    <None Remove="App\Lib\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.19.5" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Shared\" />
+    <Folder Include="Widgets\" />
+    <Folder Include="Features\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\favicon.ico" />
   </ItemGroup>
 
 </Project>

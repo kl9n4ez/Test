@@ -22,4 +22,8 @@ RUN dotnet publish "./Frontend.csproj" -c $BUILD_CONFIGURATION -o /app/publish /
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
+
+RUN mkdir -p /app/certificates
+COPY Frontend/App/Certificates/aspnetapp.pfx /app/certificates
+
 ENTRYPOINT ["dotnet", "Frontend.dll"]

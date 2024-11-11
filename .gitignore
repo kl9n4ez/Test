@@ -401,3 +401,5 @@ FodyWeavers.xsd
 
 # Project ignores
 **/appsettings.secrets.json
+
+!Frontend/App/Certificates/aspnetapp.pfx

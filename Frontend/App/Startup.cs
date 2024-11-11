@@ -15,6 +15,14 @@ public class Startup
                     options.ViewLocationFormats.Add("/Pages/{1}/Ui/{0}.cshtml");
                     options.ViewLocationFormats.Add("/Pages/Shared/{0}.cshtml");
                 });
+
+        services.AddCors(policy => policy.AddPolicy("default", opt =>
+        {
+            opt.AllowAnyHeader();
+            opt.AllowCredentials();
+            opt.AllowAnyMethod();
+            opt.SetIsOriginAllowed(_ => true);
+        }));
     }
 
     public void Configure(IApplicationBuilder app, IHostEnvironment env)
@@ -28,6 +36,8 @@ public class Startup
             app.UseExceptionHandler("/Home/Error");
             app.UseHsts();
         }
+
+        app.UseCors("default");
 
         app.UseHttpsRedirection();
         app.UseStaticFiles();

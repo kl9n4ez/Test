@@ -1,3 +1,4 @@
+//Привет
 namespace XUnitTestProject;
 
 public class ExampleClassTests
